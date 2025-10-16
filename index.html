@@ -1,42 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="YouTube Transcript Generator: The Ultimate Tool for Content Creators">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="YouTube Transcript Generator: The Ultimate Tool for Content Creators"/>
   <title>YouTube Transcript Generator: The Ultimate Tool for Content Creators</title>
   <style>
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.6;
-      margin: 20px;
-      background-color: #fafafa;
-      color: #333;
+    :root{
+      --accent:#0a66ff;
+      --ink:#222;
+      --text:#333;
+      --muted:#6b7280;
+      --bg:#f7f8fb;
+      --card:#fff;
+      --ring:rgba(10,102,255,.12);
+      --radius:14px;
     }
-    h1, h2, h3 {
-      color: #222;
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;
+      color:var(--text); background:var(--bg); line-height:1.8;
     }
-    a {
-      color: #0073e6;
-      text-decoration: none;
+    header{
+      padding:56px 20px; text-align:center; background:linear-gradient(135deg,#0a66ff 0%,#6aa4ff 100%);
+      color:#fff; position:relative; overflow:hidden;
     }
-    a:hover {
-      text-decoration: underline;
+    header h1{margin:0; font-size:clamp(1.6rem,2.8vw,2.4rem)}
+    header p{margin:.6rem 0 0; opacity:.9}
+    main{
+      max-width:900px; margin:36px auto; background:var(--card); border-radius:var(--radius);
+      box-shadow:0 20px 40px var(--ring); padding:28px;
     }
-    ul {
-      margin-left: 20px;
+    h2{color:var(--ink); border-left:4px solid var(--accent); padding-left:10px; margin-top:36px}
+    a{color:var(--accent); text-decoration:none} a:hover{text-decoration:underline}
+    ul{padding-left:20px}
+    figure{margin:26px 0; text-align:center}
+    figcaption{font-size:.9rem; color:var(--muted); margin-top:8px}
+    .media{width:100%; max-width:820px; margin-inline:auto; border-radius:12px; overflow:hidden; background:#eef3ff}
+    .row{
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:18px;
+      background:#fafbff; border:1px solid #eef1ff; padding:14px; border-radius:12px; margin:18px 0;
     }
-    hr {
-      margin: 40px 0;
-    }
+    hr{border:0; height:1px; background:#eee; margin:40px 0}
+    footer{max-width:900px; margin:0 auto 36px; text-align:center; color:#6b7280}
+    /* SVGs look crisp on dark backgrounds too */
   </style>
 </head>
 <body>
 
+<header>
   <h1><strong>YouTube Transcript Generator: The Ultimate Tool for Content Creators</strong></h1>
+  <p>Turn speech into searchable, accessible, and reusable text.</p>
+</header>
+
+<main>
+
+  <!-- HERO ILLUSTRATION (inline SVG, no external URL) -->
+  <figure>
+    <svg class="media" viewBox="0 0 1200 360" role="img" aria-labelledby="heroTitle heroDesc" xmlns="http://www.w3.org/2000/svg">
+      <title id="heroTitle">YouTube to Text Illustration</title>
+      <desc id="heroDesc">Stylized play button converting into text lines.</desc>
+      <defs>
+        <linearGradient id="g1" x1="0" x2="1">
+          <stop offset="0" stop-color="#0a66ff"/><stop offset="1" stop-color="#6aa4ff"/>
+        </linearGradient>
+        <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+          <feGaussianBlur in="SourceAlpha" stdDeviation="6" result="blur"/>
+          <feOffset dy="6" result="off"/>
+          <feMerge><feMergeNode in="off"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+      </defs>
+      <rect width="1200" height="360" fill="url(#g1)"/>
+      <g transform="translate(120,80)">
+        <rect width="280" height="200" rx="16" fill="#fff" filter="url(#soft)"/>
+        <circle cx="60" cy="52" r="18" fill="#ff0033"/>
+        <polygon points="56,44 80,52 56,60" fill="#fff"/>
+        <rect x="110" y="40" width="150" height="8" rx="4" fill="#dbe7ff"/>
+        <rect x="110" y="60" width="120" height="8" rx="4" fill="#dbe7ff"/>
+        <rect x="110" y="80" width="140" height="8" rx="4" fill="#dbe7ff"/>
+      </g>
+      <g transform="translate(480,120)">
+        <rect width="540" height="120" rx="12" fill="#ffffff" opacity="0.95"/>
+        <rect x="24" y="28" width="492" height="12" rx="6" fill="#cfe0ff"/>
+        <rect x="24" y="50" width="420" height="12" rx="6" fill="#d9e6ff"/>
+        <rect x="24" y="72" width="468" height="12" rx="6" fill="#e6efff"/>
+      </g>
+    </svg>
+    <figcaption>From video to clean, editable text — instantly.</figcaption>
+  </figure>
 
   <h2><strong>Introduction</strong></h2>
   <p>Ever wanted to quickly get the text of your favorite YouTube video? That’s where a <strong>YouTube Transcript Generator</strong> comes in. This powerful tool extracts video speech and converts it into text — saving hours of manual typing. Whether you’re a creator, student, or marketer, having accurate transcripts can change the way you work with video content.</p>
+
+  <!-- WHAT IS IT -->
+  <figure>
+    <svg class="media" viewBox="0 0 1200 320" role="img" aria-label="Waveform turning into paragraphs" xmlns="http://www.w3.org/2000/svg">
+      <rect width="1200" height="320" fill="#ffffff"/>
+      <g transform="translate(40,40)">
+        <!-- waveform -->
+        <g fill="#0a66ff">
+          <rect x="0" y="70" width="8" height="40" rx="4"/>
+          <rect x="16" y="40" width="8" height="100" rx="4"/>
+          <rect x="32" y="60" width="8" height="60" rx="4"/>
+          <rect x="48" y="30" width="8" height="120" rx="4"/>
+          <rect x="64" y="50" width="8" height="80" rx="4"/>
+          <rect x="80" y="70" width="8" height="40" rx="4"/>
+        </g>
+        <!-- arrow -->
+        <polygon points="160,90 220,90 220,70 260,100 220,130 220,110 160,110" fill="#6aa4ff"/>
+        <!-- text lines -->
+        <g transform="translate(300,20)" fill="#cfe0ff">
+          <rect x="0" y="0" width="800" height="14" rx="7"/>
+          <rect x="0" y="28" width="720" height="14" rx="7"/>
+          <rect x="0" y="56" width="770" height="14" rx="7"/>
+          <rect x="0" y="84" width="810" height="14" rx="7"/>
+          <rect x="0" y="112" width="690" height="14" rx="7"/>
+        </g>
+      </g>
+    </svg>
+    <figcaption>Speech recognition converts audio waveforms into readable paragraphs.</figcaption>
+  </figure>
 
   <h2><strong>What is a YouTube Transcript Generator?</strong></h2>
   <p>A <strong>YouTube Transcript Generator</strong> is an online tool that automatically transcribes spoken words from YouTube videos into written text. With a single click, it scans the video’s audio track, processes the speech, and provides a readable transcript. This helps users easily copy, edit, or analyze content without watching the entire video again.</p>
@@ -44,9 +128,23 @@
   <h2><strong>Why You Need a YouTube Transcript Generator</strong></h2>
   <p>Transcripts are more than just convenience — they’re essential. They make your videos <strong>searchable, accessible, and shareable</strong>. From improving SEO rankings to reaching a broader audience, using a <strong>YouTube Transcript Generator</strong> is a must-have for any serious content creator.</p>
 
+  <!-- SEO -->
+  <figure>
+    <svg class="media" viewBox="0 0 1200 280" role="img" aria-label="SEO chart rising" xmlns="http://www.w3.org/2000/svg">
+      <rect width="1200" height="280" fill="#ffffff"/>
+      <g transform="translate(60,40)">
+        <rect x="0" y="0" width="1080" height="200" rx="10" fill="#f3f6ff" stroke="#e1eaff"/>
+        <polyline points="20,160 200,150 340,120 520,130 700,90 900,70 1040,40" fill="none" stroke="#0a66ff" stroke-width="6"/>
+        <circle cx="1040" cy="40" r="7" fill="#0a66ff"/>
+        <text x="980" y="30" fill="#0a66ff" font-size="18" font-family="Inter, Arial, sans-serif">Better rankings</text>
+      </g>
+    </svg>
+    <figcaption>Transcripts feed search engines with indexable text, improving discoverability.</figcaption>
+  </figure>
+
   <h2><strong>How the YouTube Transcript Generator Works</strong></h2>
-  <p>Most transcript generators use <strong>speech recognition technology</strong> to analyze the audio in YouTube videos. Once you paste the video URL, the system identifies spoken words, converts them to text, and formats them with timestamps. Tools like
-  <a href="https://youtubetranscripts.org/">YouTube Transcript Generator</a> make this process effortless — no downloads or coding required.</p>
+  <p>Most transcript generators use <strong>speech recognition technology</strong> to analyze the audio in YouTube videos. Once you paste the video URL, the system identifies spoken words, converts them to text, and formats them with timestamps.
+  Tools like <a href="https://youtubetranscripts.org/">YouTube Transcript Generator</a> make this process effortless — no downloads or coding required.</p>
 
   <h2><strong>Top Features of a Good YouTube Transcript Generator</strong></h2>
   <ul>
@@ -55,6 +153,21 @@
     <li><strong>Multi-language Support:</strong> Handle various accents and languages.</li>
     <li><strong>Download Options:</strong> Export transcripts in formats like TXT, DOCX, or PDF.</li>
   </ul>
+
+  <!-- Accessibility -->
+  <figure>
+    <svg class="media" viewBox="0 0 1200 260" role="img" aria-label="Accessibility icon" xmlns="http://www.w3.org/2000/svg">
+      <rect width="1200" height="260" fill="#ffffff"/>
+      <g transform="translate(120,40)">
+        <circle cx="100" cy="90" r="60" fill="#0a66ff" opacity="0.12"/>
+        <circle cx="100" cy="90" r="34" fill="#0a66ff"/>
+        <rect x="260" y="40" width="780" height="24" rx="12" fill="#cfe0ff"/>
+        <rect x="260" y="80" width="660" height="16" rx="8" fill="#dbe7ff"/>
+        <rect x="260" y="106" width="720" height="16" rx="8" fill="#e7efff"/>
+      </g>
+    </svg>
+    <figcaption>Transcripts support accessibility and compliance (e.g., WCAG).</figcaption>
+  </figure>
 
   <h2><strong>Benefits of Using YouTube Transcript Generator for Creators</strong></h2>
   <p>For YouTubers, this tool is a game-changer. You can:</p>
@@ -65,60 +178,28 @@
   </ul>
   <p>It’s like getting free SEO content from your own videos!</p>
 
-  <h2><strong>SEO Advantages of Transcribing YouTube Videos</strong></h2>
-  <p>Did you know that search engines can’t “watch” videos but can read text? By transcribing your videos, you’re feeding Google with valuable keywords and phrases. A <strong>YouTube Transcript Generator</strong> improves your video’s <strong>discoverability</strong>, helping it rank higher on search results.</p>
-
-  <h2><strong>How Transcripts Improve Accessibility</strong></h2>
-  <p>Transcripts make videos accessible to <strong>hearing-impaired viewers</strong>, <strong>non-native speakers</strong>, and <strong>language learners</strong>. They also help organizations meet <strong>accessibility compliance standards</strong> like ADA and WCAG — essential for professional video publishers.</p>
+  <!-- Education -->
+  <figure>
+    <svg class="media" viewBox="0 0 1200 260" role="img" aria-label="Education and notes" xmlns="http://www.w3.org/2000/svg">
+      <rect width="1200" height="260" fill="#ffffff"/>
+      <g transform="translate(60,40)">
+        <rect x="0" y="0" width="340" height="180" rx="12" fill="#f3f6ff" stroke="#e1eaff"/>
+        <rect x="24" y="24" width="292" height="12" rx="6" fill="#cfe0ff"/>
+        <rect x="24" y="48" width="260" height="12" rx="6" fill="#d9e6ff"/>
+        <rect x="24" y="72" width="280" height="12" rx="6" fill="#e6efff"/>
+        <rect x="24" y="96" width="200" height="12" rx="6" fill="#e6efff"/>
+        <rect x="24" y="120" width="240" height="12" rx="6" fill="#e6efff"/>
+        <g transform="translate(420,0)">
+          <rect x="0" y="0" width="660" height="180" rx="12" fill="#f3f6ff" stroke="#e1eaff"/>
+          <rect x="24" y="24" width="612" height="12" rx="6" fill="#cfe0ff"/>
+          <rect x="24" y="48" width="540" height="12" rx="6" fill="#d9e6ff"/>
+          <rect x="24" y="72" width="600" height="12" rx="6" fill="#e6efff"/>
+          <rect x="24" y="96" width="520" height="12" rx="6" fill="#e6efff"/>
+        </g>
+      </g>
+    </svg>
+    <figcaption>Students and educators can turn lectures into structured study notes.</figcaption>
+  </figure>
 
   <h2><strong>YouTube Transcript Generator for Educators and Students</strong></h2>
-  <p>Students can quickly summarize lecture videos, while educators can turn their recordings into study materials. A transcript generator saves hours of note-taking and helps in preparing research or presentations efficiently.</p>
-
-  <h2><strong>Business Uses of YouTube Transcript Generator</strong></h2>
-  <p>Businesses can use transcripts to document meetings, create training manuals, or repurpose webinar content. It’s a smart way to <strong>maximize the ROI</strong> of every video produced.</p>
-
-  <h2><strong>Comparison with Manual Transcription</strong></h2>
-  <p>Manual transcription is slow, costly, and prone to human error. Automated tools like
-  <a href="https://youtubetranscripts.org/">YouTube Transcript Generator</a> can transcribe an entire video in seconds, offering both <strong>speed and accuracy</strong> at zero cost.</p>
-
-  <h2><strong>Tips for Getting the Best Results</strong></h2>
-  <ul>
-    <li>Always <strong>proofread</strong> your transcript for names and technical terms.</li>
-    <li>Use <strong>formatted timestamps</strong> for clarity.</li>
-    <li>Incorporate <strong>SEO keywords</strong> naturally into your final transcript or blog post.</li>
-  </ul>
-
-  <h2><strong>Popular Tools to Try</strong></h2>
-  <p>Among the best tools available, <a href="https://youtubetranscripts.org/">YouTube Transcript Generator</a> stands out for its <strong>simplicity, accuracy, and speed</strong>. It’s entirely free, browser-based, and works without any sign-ups or hidden charges.</p>
-
-  <h2><strong>Common Mistakes to Avoid</strong></h2>
-  <ul>
-    <li>Relying solely on AI-generated transcripts without review.</li>
-    <li>Forgetting to credit the original source when republishing text.</li>
-    <li>Ignoring keyword optimization for SEO purposes.</li>
-  </ul>
-
-  <h2><strong>Conclusion</strong></h2>
-  <p>The <strong>YouTube Transcript Generator</strong> is more than a convenience tool — it’s an essential asset for modern creators, students, and businesses. By converting speech to text, it unlocks powerful opportunities for SEO, accessibility, and productivity. Start transcribing today with
-  <a href="https://youtubetranscripts.org/">YouTube Transcript Generator</a> and see how it transforms your video experience.</p>
-
-  <hr>
-
-  <h2><strong>FAQs</strong></h2>
-  <p><strong>1. What is a YouTube Transcript Generator?</strong><br>
-  A YouTube Transcript Generator converts the spoken content of a video into text automatically.</p>
-
-  <p><strong>2. Is it free to use?</strong><br>
-  Yes, tools like <a href="https://youtubetranscripts.org/">YouTube Transcript Generator</a> are free and don’t require registration.</p>
-
-  <p><strong>3. Can I download my transcript?</strong><br>
-  Absolutely! You can export transcripts in various formats like TXT or PDF.</p>
-
-  <p><strong>4. Does it support multiple languages?</strong><br>
-  Yes, many tools offer multilingual support for global users.</p>
-
-  <p><strong>5. How accurate are AI-based transcripts?</strong><br>
-  They’re highly accurate, especially for clear audio. Minor edits may be needed for perfect results.</p>
-
-</body>
-</html>
+  <p>Students can quickly summarize lecture video
